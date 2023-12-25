@@ -31,12 +31,19 @@ class AuthController extends Controller
        }
          $user=Auth::user();
          $token=$user->createToken('token')->plainTextToken;
+        //  mettre le jwt token dans les cookies pendant 1 journee (60min x24)
+         $cookie=cookie('jwt',$token,60*24);
 
          return \response([
             'jwt'=>$token
-         ]);
+         ])->withCookie($cookie);
 
 
+    }
+
+    // pour avoir le user qui est connecte
+    public function user(Request $request){
+        return $request->user();
     }
 
    
