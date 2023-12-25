@@ -21,7 +21,7 @@ Route::post('login',[AuthController::class,'login']);
 // le middleware check si le user est connecte ou non
 Route::middleware('auth:sanctum')->group(function(){
     Route::get('user',[AuthController::class,'user']);
-    // Route::post('logout',[AuthController::class,'logout']);
+    Route::post('logout',[AuthController::class,'logout']);
 });
 
 

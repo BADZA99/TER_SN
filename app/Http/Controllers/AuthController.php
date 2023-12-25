@@ -7,6 +7,7 @@ use App\Models\User;
 // use GuzzleHttp\Psr7\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cookie;
 use Symfony\Component\HttpFoundation\Response;
 
 class AuthController extends Controller
@@ -44,6 +45,13 @@ class AuthController extends Controller
     // pour avoir le user qui est connecte
     public function user(Request $request){
         return $request->user();
+    }
+
+    public function logout(){
+        $cookie= Cookie::forget('jwt');
+        return \response([
+            'message'=>'success'
+        ])->withCookie($cookie);
     }
 
    
