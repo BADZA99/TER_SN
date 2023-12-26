@@ -6,7 +6,10 @@ import Register from './pages/Register';
 import Zones from './pages/Zones';
 import Classes from './pages/Classes';
 import Navbar from "./Components/Navbar";
-import './index.css'
+import Axios from 'axios';
+import './index.css';
+
+Axios.defaults.baseURL='http://localhost:8000/api/';
 
 function App() {
 
