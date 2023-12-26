@@ -43,9 +43,17 @@ const styles = {
   error: {
     color: "red",
   },
+  modal:{
+    backgroundColor:"green",
+    color:"white",
+    padding:"10px",
+    marginBottom:"10px"
+  }
 };
 
 export default function Register() {
+  const navigate = useNavigate();
+  const [openModal,setOpenModal]=useState(false);
   const {
     register,
     handleSubmit,
@@ -61,15 +69,27 @@ export default function Register() {
         password: data.password,
       });
       console.log(response);
+      setOpenModal(true);
+      // fais une pause de 10s avant de rediriger vers login
+      setTimeout(() => {
+        navigate("/login");
+      }, 5000);
     } catch (err) {
       console.log(err);
     }
-    // useNavigate("/");
+
     // console.log(data);
   };
 
   return (
     <div style={styles.container}>
+     {
+        openModal && (
+          <div style={styles.modal}>
+            Votre compte a été créé avec succès. Vous allez être redirigé vers la page de connexion dans 5s
+          </div>
+        )
+     }
       <form style={styles.form} onSubmit={handleSubmit(onSubmit)}>
         <input
           type="text"
