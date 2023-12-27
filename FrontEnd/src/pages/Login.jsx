@@ -42,7 +42,6 @@ const styles = {
 
 export default function Login() {
   const navigate = useNavigate();
-  const [openModal,setOpenModal]=useState(false);
   const {
     register,
     handleSubmit,
@@ -57,7 +56,7 @@ export default function Login() {
           password: data.password,
         }
       );
-      console.log(response);
+      // console.log(response);
       // localStorage.setItem("token", response.data.token);
       navigate("/");
     } catch (error) {

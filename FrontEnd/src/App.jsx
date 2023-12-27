@@ -10,6 +10,9 @@ import Axios from 'axios';
 import './index.css';
 
 Axios.defaults.baseURL='http://localhost:8000/api/';
+// pass cookie from the backend
+Axios.defaults.withCredentials=true;
+
 
 function App() {
 
