@@ -6,6 +6,7 @@ import Register from './pages/Register';
 import Zones from './pages/Zones';
 import Classes from './pages/Classes';
 import Navbar from "./Components/Navbar";
+import Default from './pages/Default';
 import axios from "axios";
 import Axios from 'axios';
 import './index.css';
@@ -26,7 +27,8 @@ function App() {
       <Router>
         <Navbar/>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<Default />} />
           <Route path="/zones" element={<Zones />} />
           <Route path="/classes" element={<Classes />} />
           <Route path="/register" element={<Register />} />

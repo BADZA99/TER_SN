@@ -75,7 +75,7 @@ export default function Login() {
       localStorage.setItem("token", response.data.token);
       fetchConnectedUser();
 
-      navigate("/");
+      navigate("/home");
     } catch (error) {
       console.log(error);
     }

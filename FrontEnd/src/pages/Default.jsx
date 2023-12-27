@@ -1,10 +1,4 @@
-import axios from "axios";
-import React, { useState } from 'react';
-import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import userStore from "../store/userStore";
-
-
+import React from 'react'
 const styles = {
   container: {
     display: 'flex',
@@ -16,7 +10,7 @@ const styles = {
     backgroundColor: '#f8f9fa'
   },
   title: {
-    fontSize: '5.5em',
+    fontSize: '2.5em',
     color: '#1a237e'
   },
   subtitle: {
@@ -33,14 +27,11 @@ const styles = {
     textDecoration: 'none'
   }
 }
-
-export default function Home() {
-  const { user, setUser } = userStore();
-
- const [message, setMessage] = useState("");
+export default function Default() {
   return (
     <div style={styles.container}>
-      <h1 style={styles.title}>Bienvenue  {  user && `hi ${user.name}` }</h1>
+      <h1 style={styles.title}>Bienvenue sur l'application TER BI</h1>
+      <p style={styles.subtitle}>Achetez vos tickets de train en toute simplicité</p>
     </div>
   )
 }
