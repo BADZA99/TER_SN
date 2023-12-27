@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import userStore from "../store/userStore";
+import { useEffect } from 'react';
 
 const styles = {
   container: {
@@ -42,11 +44,24 @@ const styles = {
 
 export default function Login() {
   const navigate = useNavigate();
+  const { user, setUser } = userStore();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+
+  // garder le user connecte
+   const fetchConnectedUser = async () => {
+   try {
+     const response = await axios.get('user');
+    //  console.log(response.data);
+      setUser(response.data);
+    //  setMessage(`hi ${response.data.email}`);
+   } catch (e) {
+     console.log(e);
+   }
+ }
   const onSubmit = async (data) => {
     try {
       const response = await axios.post(
@@ -57,12 +72,15 @@ export default function Login() {
         }
       );
       // console.log(response);
-      // localStorage.setItem("token", response.data.token);
+      localStorage.setItem("token", response.data.token);
+      fetchConnectedUser();
+
       navigate("/");
     } catch (error) {
       console.log(error);
     }
   };
+
   return (
     <div style={styles.container}>
       <form style={styles.form} onSubmit={handleSubmit(onSubmit)}>

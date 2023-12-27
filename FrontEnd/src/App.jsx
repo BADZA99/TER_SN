@@ -6,8 +6,11 @@ import Register from './pages/Register';
 import Zones from './pages/Zones';
 import Classes from './pages/Classes';
 import Navbar from "./Components/Navbar";
+import axios from "axios";
 import Axios from 'axios';
 import './index.css';
+import { useEffect } from 'react';
+import userStore from './store/userStore';
 
 Axios.defaults.baseURL='http://localhost:8000/api/';
 // pass cookie from the backend
@@ -15,6 +18,7 @@ Axios.defaults.withCredentials=true;
 
 
 function App() {
+
 
   return (
     <>

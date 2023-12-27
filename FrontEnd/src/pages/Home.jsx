@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import userStore from "../store/userStore";
 
 
 const styles = {
@@ -34,26 +35,14 @@ const styles = {
 }
 
 export default function Home() {
- const [message, setMessage] = useState("");
+  const { user, setUser } = userStore();
 
- const fetchData = async () => {
-   try {
-     const response = await axios.get('user');
-     console.log(response.data);
-     setMessage(`hi ${response.data.email}`);
-   } catch (e) {
-     console.log(e);
-   }
- }
-useEffect(() => {
-  fetchData();
-}, []);
-console.log(message);
+ const [message, setMessage] = useState("");
   return (
     <div style={styles.container}>
       <h1 style={styles.title}>Bienvenue sur l'application TER BI</h1>
       <p style={styles.subtitle}>Achetez vos tickets de train en toute simplicité</p>
-      { message }
+      {  user && `hi ${user.name}` }
     </div>
   )
 }
