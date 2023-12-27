@@ -40,7 +40,8 @@ export default function Home() {
  const [message, setMessage] = useState("");
   return (
     <div style={styles.container}>
-      <h1 style={styles.title}>Bienvenue  {  user && `hi ${user.name}` }</h1>
+      <h1 style={styles.title}>Bienvenue  {  user && ` ${user.name}` }</h1>
+      <Link style={styles.link} to="/classes">Acheter un ticket</Link>
     </div>
   )
 }

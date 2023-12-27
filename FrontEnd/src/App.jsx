@@ -19,13 +19,29 @@ Axios.defaults.withCredentials=true;
 
 
 function App() {
-
+  const { user, setUser } = userStore();
+  const { classChoice, setClassChoice } = userStore();
+  const { ticketPrice, setTicketPrice } = userStore();
+  console.log(user,classChoice,ticketPrice);
+  // garder le user connecte
+  const fetchConnectedUser = async () => {
+    try {
+      const response = await axios.get("user");
+      //  console.log(response.data);
+      setUser(response.data);
+      //  setMessage(`hi ${response.data.email}`);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+   useEffect(() => {
+     fetchConnectedUser();
+   }, []);
 
   return (
     <>
-
       <Router>
-        <Navbar/>
+        <Navbar />
         <Routes>
           <Route path="/home" element={<Home />} />
           <Route path="/" element={<Default />} />
@@ -36,7 +52,7 @@ function App() {
         </Routes>
       </Router>
     </>
-  )
+  );
 }
 
 export default App
