@@ -46,7 +46,7 @@ export default function Zones() {
   const [zones, setZones] = useState([]); 
   const toPrices = (zoneName) => {
     setZoneChoice(zoneName);
-    // navigate("/prices");
+    navigate("/prices");
   };
 // console.log(user,classChoice)
   const fetchZones = async () => {
@@ -83,7 +83,7 @@ export default function Zones() {
           </div>
         ))}
         {
-          zones.length === 0 && <h1>PAS DE ZONES .....</h1>
+          zones.length === 0 && <h1>Chargement ....</h1>
         }
     </div>
   );

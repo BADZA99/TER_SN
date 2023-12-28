@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Register from './pages/Register';
 import Zones from './pages/Zones';
 import Classes from './pages/Classes';
+import Prices from './pages/Prices';
 import Navbar from "./Components/Navbar";
 import Default from './pages/Default';
 import axios from "axios";
@@ -22,7 +23,7 @@ function App() {
   const { user, setUser } = userStore();
   const { SavedClassChoice, setSavedClassChoice } = userStore();
   const { ticketPrice, setTicketPrice } = userStore();
-  console.log(user, SavedClassChoice, ticketPrice);
+  // console.log(user, SavedClassChoice, ticketPrice);
   // garder le user connecte
   const fetchConnectedUser = async () => {
     try {
@@ -45,6 +46,7 @@ function App() {
         <Routes>
           <Route path="/home" element={<Home />} />
           <Route path="/" element={<Default />} />
+          <Route path="/prices" element={<Prices />} />
           <Route path="/zones" element={<Zones />} />
           <Route path="/classes" element={<Classes />} />
           <Route path="/register" element={<Register />} />
