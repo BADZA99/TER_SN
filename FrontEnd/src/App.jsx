@@ -20,9 +20,9 @@ Axios.defaults.withCredentials=true;
 
 function App() {
   const { user, setUser } = userStore();
-  const { classChoice, setClassChoice } = userStore();
+  const { SavedClassChoice, setSavedClassChoice } = userStore();
   const { ticketPrice, setTicketPrice } = userStore();
-  console.log(user,classChoice,ticketPrice);
+  console.log(user, SavedClassChoice, ticketPrice);
   // garder le user connecte
   const fetchConnectedUser = async () => {
     try {

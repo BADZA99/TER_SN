@@ -38,7 +38,7 @@ const styles = {
 };
 
 export default function Zones() {
-  const { classChoice, setClassChoice } = userStore();
+  const { SavedClassChoice, setSavedClassChoice } = userStore();
   // const { user, setUser } = userStore();
   // const [savedClassChoice, setSavedClassChoice] = useState(classChoice);
   const { zoneChoice, setZoneChoice } = userStore();
@@ -61,28 +61,30 @@ export default function Zones() {
 
   useEffect(() => {
     fetchZones();
-    console.log(classChoice)
+    // console.log(SavedClassChoice);
   }, []);
 
   return (
     <div style={styles.container}>
       <h1 style={styles.title}>Choisir Votre Zone</h1>
-      {
-        zones
-          .filter((zone) => zone.class_id === classChoice)
-          .map((zone, index) => (
-            <div
-              key={index}
-              style={styles.zoneCard}
-              onClick={() => toPrices(zone.name)}
-            >
-              <h2 style={styles.zoneName}>{zone.name}</h2>
-              <h2 style={styles.zoneName}>
-                {zone.class_id == 1 ? "1ere classe" : "2eme classe"}
-              </h2>
-              <p style={styles.zoneClass}>{zone.description}</p>
-            </div>
-          ))}
+      {zones && zones
+        .filter((zone) => zone.class_id === SavedClassChoice)
+        .map((zone, index) => (
+          <div
+            key={index}
+            style={styles.zoneCard}
+            onClick={() => toPrices(zone.name)}
+          >
+            <h2 style={styles.zoneName}>{zone.name}</h2>
+            <h2 style={styles.zoneName}>
+              {zone.class_id == 1 ? "1ere classe" : "2nd classe"}
+            </h2>
+            <p style={styles.zoneClass}>{zone.description}</p>
+          </div>
+        ))}
+        {
+          zones.length === 0 && <h1>PAS DE ZONES .....</h1>
+        }
     </div>
   );
 }

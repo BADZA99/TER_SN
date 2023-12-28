@@ -41,7 +41,7 @@ const styles = {
 };
 
 export default function Classes() {
-  const { classChoice, setClassChoice } = userStore();
+  const { SavedClassChoice, setSavedClassChoice } = userStore();
   const { ticketPrice, setTicketPrice } = userStore();
   const [classes, setClasses] = useState();
   const navigate = useNavigate();
@@ -53,7 +53,7 @@ const toZones = (className,classPrice) => {
   }else{
     setTicketPrice(2500);
   }
-  setClassChoice(className);
+  setSavedClassChoice(className);
   navigate("/zones");
 };
 
