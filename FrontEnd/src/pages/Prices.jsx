@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import useUserStore from "../store/userStore";
 import { useNavigate } from "react-router-dom";
+import QRCode from "react-qr-code";
 
 
 const styles = {
@@ -93,6 +94,7 @@ export default function Prices() {
       <button style={styles.button} onClick={validate}>
         Validate
       </button>
+   
     </div>
   );
 }
