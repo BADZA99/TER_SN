@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import useUserStore from "../store/userStore";
+import { useNavigate } from "react-router-dom";
+
 
 const styles = {
   container: {
@@ -6,11 +9,13 @@ const styles = {
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    height: "100vh",
-    backgroundColor: "#f8f9fa",
+    height: "80vh",
+    width: "50%",
+    backgroundColor: "#f1f1f1",
+    margin: "10% auto"
   },
   title: {
-    fontSize: "2em",
+    fontSize: "1.5em",
     color: "#303f9f",
   },
   ticketInput: {
@@ -37,10 +42,14 @@ const styles = {
   },
 };
 
-const ticketPrice = 10;
 
 export default function Prices() {
   const [ticketCount, setTicketCount] = useState(0);
+  const { nbTicket, setNbTicket } = useUserStore();
+  const { ticketPrice, setTicketPrice } = useUserStore();
+  const { TotalToPay, setTotalToPay } = useUserStore();
+  const navigate = useNavigate();
+
 
   const incrementTicketCount = () => {
     setTicketCount(ticketCount + 1);
@@ -57,6 +66,9 @@ export default function Prices() {
     console.log(
       `You have purchased ${ticketCount} tickets for a total of ${total}`
     );
+    setNbTicket(ticketCount);
+    setTotalToPay(total);
+    navigate("/infosReservation");
   };
 
   const total = ticketCount * ticketPrice;
@@ -77,7 +89,7 @@ export default function Prices() {
           +
         </button>
       </div>
-      <p style={styles.total}>Total to pay: {total}</p>
+      <p style={styles.total}>Total a payer: {total} fcfa</p>
       <button style={styles.button} onClick={validate}>
         Validate
       </button>

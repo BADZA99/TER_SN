@@ -8,6 +8,8 @@ import Classes from './pages/Classes';
 import Prices from './pages/Prices';
 import Navbar from "./Components/Navbar";
 import Default from './pages/Default';
+// import la page infosreservations dans pages
+import InfosReservation from "./pages/infosReservation"
 import axios from "axios";
 import Axios from 'axios';
 import './index.css';
@@ -44,6 +46,7 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
+          <Route path="/infosReservation" element={<InfosReservation />} />
           <Route path="/home" element={<Home />} />
           <Route path="/" element={<Default />} />
           <Route path="/prices" element={<Prices />} />
