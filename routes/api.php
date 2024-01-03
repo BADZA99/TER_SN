@@ -26,7 +26,7 @@ Route::middleware('auth:sanctum')->group(function(){
     Route::post('logout',[AuthController::class,'logout']);
 });
 
-// routes pour les classe
+// routes pour les classes
 Route::get('classe',[ClasseController::class,'index']);
 
 // routes pour les zones
