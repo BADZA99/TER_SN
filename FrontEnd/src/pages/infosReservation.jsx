@@ -1,7 +1,7 @@
 import React from "react";
 import useUserStore from "../store/userStore";
-// import QRCode from "react-qr-code";
-import QRCode from "qrcode.react";
+import QRCode from "react-qr-code";
+// import QRCode from "qrcode.react";
 
 export default function infosReservation() {
   const { user, SavedClassChoice, zoneChoice, nbTicket, TotalToPay } =
@@ -31,13 +31,13 @@ export default function infosReservation() {
       <p>Number of tickets: {nbTicket}</p>
       <p>Total a payer: {TotalToPay} fcfa</p>
 
-      {/* <QRCode
+      <QRCode
         size={16}
         style={{ height: "auto", maxWidth: "30%", width: "100%" }}
-        value={value}
+        value={reservationUrl}
         viewBox={`0 0 16 16`}
-      /> */}
-      <QRCode value={reservationUrl} />
+      />
+      {/* <QRCode value={reservationUrl} /> */}
     </div>
   );
 }
