@@ -8,6 +8,8 @@ import Classes from './pages/Classes';
 import Prices from './pages/Prices';
 import Default from './pages/Default';
 import MyTickets from './pages/Mytickets';
+import Profile from './pages/Profile';
+import ClassePresentation from './pages/ClassesPresentation';
 
 import Navbar from "./Components/Navbar";
 // import la page infosreservations dans pages
@@ -49,6 +51,8 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/infosReservation" element={<InfosReservation />} />
+          <Route path="/classesPresentation" element={<ClassePresentation />} />
+          <Route path="/myProfile" element={<Profile />} />
           <Route path="/home" element={<Home />} />
           <Route path="/" element={<Default />} />
           <Route path="/prices" element={<Prices />} />

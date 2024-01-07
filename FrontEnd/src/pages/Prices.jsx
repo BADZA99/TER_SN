@@ -63,10 +63,6 @@ export default function Prices() {
   };
 
   const validate = () => {
-    // Here you can handle the validation logic
-    console.log(
-      `You have purchased ${ticketCount} tickets for a total of ${total}`
-    );
     setNbTicket(ticketCount);
     setTotalToPay(total);
     navigate("/infosReservation");

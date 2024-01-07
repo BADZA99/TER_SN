@@ -41,13 +41,16 @@ const MyTickets = () => {
       color: "blue",
       textDecoration: "none",
     },
+    text:{
+        textAlign:'center',
+    }
   };
 
   return (
     <div style={styles.container}>
       <h1>Mes Tickets</h1>
       <div style={styles.row}>
-        {tickets.map((ticket, index) => (
+        { tickets.length != 0 && tickets.map((ticket, index) => (
           <div style={styles.card} key={index}>
             <h2>Ticket {ticket.id}</h2>
             <p>
@@ -60,7 +63,10 @@ const MyTickets = () => {
               Voir QR Code
             </a>
           </div>
-        ))}
+        ) )}
+        {
+            tickets.length == 0 && <h1>Vous n'avez pas encore acheté de tickets</h1>
+        }
       </div>
     </div>
   );

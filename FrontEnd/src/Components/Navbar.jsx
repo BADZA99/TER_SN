@@ -25,7 +25,7 @@ const styles = {
   },
   menu: {
     height: "70%",
-    width: "14%",
+    width: "15%",
     marginRight: "auto",
     color: "#fff",
     textDecoration: "none",
@@ -62,7 +62,7 @@ const styles = {
     justifyContent:"space-between",
     alignItems:"center",
     marginRight:'auto',
-    width:"60%",
+    width:"65%",
     height:"70%",
     // backgroundColor:"red"
   
@@ -93,23 +93,48 @@ export default function Navbar() {
 
   return (
     <nav style={styles.nav}>
-        {/* <img src="logo.png" alt="Logo" style={styles.logo} /> */}
-        <Link to="/" style={styles.logo}><h1 >TER BI</h1></Link>
-        <div style={styles.itemsContainer}>
-          <Link to="/classes" style={styles.menu}>Classes</Link>
-          <Link to="/zones" style={styles.menu}>Zones</Link>
-          <Link to="/Tarifs" style={styles.menu}>Tarifs</Link>
-          <Link to="/horaires" style={styles.menu}>Horaires</Link>
-        {
-          user && <Link to="/mestickets" style={styles.menu}>Mes tickets</Link>
-        }
+      {/* <img src="logo.png" alt="Logo" style={styles.logo} /> */}
+      <Link to="/" style={styles.logo}>
+        <h1>TER BI</h1>
+      </Link>
+      {user && (
+        <Link to="/mestickets" style={styles.menu}>
+          Mes tickets
+        </Link>
+      )}
+      <div style={styles.itemsContainer}>
+        <Link to="/classesPresentation" style={styles.menu}>
+          Classes
+        </Link>
+        <Link to="/zones" style={styles.menu}>
+          Zones
+        </Link>
+        <Link to="/Tarifs" style={styles.menu}>
+          Tarifs
+        </Link>
+        <Link to="/horaires" style={styles.menu}>
+          Horaires
+        </Link>
+        {user && (
+          <Link to="/myProfile" style={styles.menu}>
+            Mon profile
+          </Link>
+        )}
+      </div>
+      {user == null ? (
+        <div>
+          <Link to="/login" style={styles.link}>
+            Connexion
+          </Link>
+          <Link to="/register" style={styles.lastLink}>
+            Inscription
+          </Link>
         </div>
-     { user == null ? (<div>
-        <Link to="/login" style={styles.link}>Connexion</Link>
-        <Link to="/register" style={styles.lastLink}>Inscription</Link>
-      </div>) :
-        <Link to="/" style={styles.link} onClick={logout}>Deconnexion</Link>
-       }
+      ) : (
+        <Link to="/" style={styles.link} onClick={logout}>
+          Deconnexion
+        </Link>
+      )}
     </nav>
-  )
+  );
 }

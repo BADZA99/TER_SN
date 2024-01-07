@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
+import useUserStore from '../store/userStore';
 const styles = {
   container: {
     display: 'flex',
@@ -28,10 +30,20 @@ const styles = {
   }
 }
 export default function Default() {
+    const { user, setUser } = useUserStore();
+
   return (
     <div style={styles.container}>
       <h1 style={styles.title}>Bienvenue sur l'application TER BI</h1>
-      <p style={styles.subtitle}>Achetez vos tickets de train en toute simplicité</p>
+
+      <p style={styles.subtitle}>
+        Achetez vos tickets de train en toute simplicité
+      </p>
+      {user && (
+        <Link style={styles.link} to="/classes">
+          Acheter un ticket
+        </Link>
+      )}
     </div>
-  )
+  );
 }
