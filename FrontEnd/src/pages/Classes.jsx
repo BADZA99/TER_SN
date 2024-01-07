@@ -30,6 +30,7 @@ const styles = {
     borderRadius: "5px",
     backgroundColor: "#fff",
     boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.1)",
+    cursor: "pointer",
   },
   className: {
     fontSize: "1.5em",

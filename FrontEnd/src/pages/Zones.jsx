@@ -27,6 +27,7 @@ const styles = {
     borderRadius: "5px",
     backgroundColor: "#fff",
     boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.1)",
+    cursor: "pointer",
   },
   zoneName: {
     fontSize: "1.5em",
@@ -73,7 +74,7 @@ export default function Zones() {
           <div
             key={index}
             style={styles.zoneCard}
-            onClick={() => toPrices(zone.name)}
+            onClick={() => toPrices(zone.id)}
           >
             <h2 style={styles.zoneName}>{zone.name}</h2>
             <h2 style={styles.zoneName}>

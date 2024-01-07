@@ -7,47 +7,72 @@ import axios from "axios";
 
 const styles = {
   nav: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    width: '100%',
-    padding: '10px',
-    backgroundColor: '#1a237e',
-    alignItems: 'center'
+    display: "flex",
+    justifyContent: "space-between",
+    width: "100%",
+    padding: "10px",
+    backgroundColor: "#1a237e",
+    alignItems: "center",
   },
   logo: {
-    height: '80%',
-    width: '30%',
-    marginRight: '10px',
-    color: '#fff',
-    textDecoration: 'none',
-    fontSize: '20px',
+    height: "80%",
+    width: "15%",
+    marginRight: "auto",
+    color: "#fff",
+    textDecoration: "none",
+    fontSize: "25px",
+    // backgroundColor: "red",
+  },
+  menu: {
+    height: "70%",
+    width: "14%",
+    marginRight: "auto",
+    color: "#fff",
+    textDecoration: "none",
+    fontSize: "25px",
+    // backgroundColor: "red",
   },
   link: {
-    marginRight: '10px',
-    padding: '10px 20px',
-    border: 'none',
-    borderRadius: '5px',
-    backgroundColor: '#fff',
-    color: 'black',
-    textDecoration: 'none',
-    boxShadow: '0px 0px 5px rgba(0, 0, 0, 0.2)',
-    transition: 'box-shadow 0.3s ease-in-out'
+    marginRight: "10px",
+    padding: "10px 20px",
+    border: "none",
+    borderRadius: "5px",
+    backgroundColor: "#fff",
+    color: "black",
+    textDecoration: "none",
+    boxShadow: "0px 0px 5px rgba(0, 0, 0, 0.2)",
+    transition: "box-shadow 0.3s ease-in-out",
   },
   lastLink: {
-    padding: '10px 20px',
-    border: 'none',
-    borderRadius: '5px',
-    backgroundColor: 'black',
-    color: '#fff',
-    textDecoration: 'none',
-    boxShadow: '0px 0px 5px rgba(0, 0, 0, 0.2)',
-    transition: 'box-shadow 0.3s ease-in-out'
+    padding: "10px 20px",
+    border: "none",
+    borderRadius: "5px",
+    backgroundColor: "black",
+    color: "#fff",
+    textDecoration: "none",
+    boxShadow: "0px 0px 5px rgba(0, 0, 0, 0.2)",
+    transition: "box-shadow 0.3s ease-in-out",
   },
   linkHover: {
-    backgroundColor: 'red',
-    boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.4)'
-  }
-}
+    backgroundColor: "red",
+    boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.4)",
+  },
+  itemsContainer:{
+    display:"flex",
+    justifyContent:"space-between",
+    alignItems:"center",
+    marginRight:'auto',
+    width:"60%",
+    height:"70%",
+    // backgroundColor:"red"
+  
+  },
+  // hover sue menu
+  menuHover: {
+    backgroundColor: "red",
+    boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.4)",
+  },
+};
 
 export default function Navbar() {
   const { user, setUser } = userStore();
@@ -70,6 +95,15 @@ export default function Navbar() {
     <nav style={styles.nav}>
         {/* <img src="logo.png" alt="Logo" style={styles.logo} /> */}
         <Link to="/" style={styles.logo}><h1 >TER BI</h1></Link>
+        <div style={styles.itemsContainer}>
+          <Link to="/classes" style={styles.menu}>Classes</Link>
+          <Link to="/zones" style={styles.menu}>Zones</Link>
+          <Link to="/Tarifs" style={styles.menu}>Tarifs</Link>
+          <Link to="/horaires" style={styles.menu}>Horaires</Link>
+        {
+          user && <Link to="/mestickets" style={styles.menu}>Mes tickets</Link>
+        }
+        </div>
      { user == null ? (<div>
         <Link to="/login" style={styles.link}>Connexion</Link>
         <Link to="/register" style={styles.lastLink}>Inscription</Link>

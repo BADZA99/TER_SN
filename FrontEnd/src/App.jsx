@@ -6,8 +6,10 @@ import Register from './pages/Register';
 import Zones from './pages/Zones';
 import Classes from './pages/Classes';
 import Prices from './pages/Prices';
-import Navbar from "./Components/Navbar";
 import Default from './pages/Default';
+import MyTickets from './pages/Mytickets';
+
+import Navbar from "./Components/Navbar";
 // import la page infosreservations dans pages
 import InfosReservation from "./pages/infosReservation"
 import axios from "axios";
@@ -50,6 +52,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/" element={<Default />} />
           <Route path="/prices" element={<Prices />} />
+          <Route path="/mestickets" element={<MyTickets />} />
           <Route path="/zones" element={<Zones />} />
           <Route path="/classes" element={<Classes />} />
           <Route path="/register" element={<Register />} />
