@@ -10,7 +10,9 @@ import Default from './pages/Default';
 import MyTickets from './pages/Mytickets';
 import Profile from './pages/Profile';
 import ClassePresentation from './pages/ClassesPresentation';
-
+import HorairesPresentation from './pages/HorairesPresentation';
+import ZonesPresentation from './pages/ZonesPresentation';
+import Horaires from './pages/Horaires';
 import Navbar from "./Components/Navbar";
 // import la page infosreservations dans pages
 import InfosReservation from "./pages/infosReservation"
@@ -52,6 +54,9 @@ function App() {
         <Routes>
           <Route path="/infosReservation" element={<InfosReservation />} />
           <Route path="/classesPresentation" element={<ClassePresentation />} />
+          <Route path="/zonesPresentation" element={<ZonesPresentation />} />
+          <Route path="/horaires" element={<Horaires />} />
+          <Route path="/horairesPresentation" element={<HorairesPresentation />} />
           <Route path="/myProfile" element={<Profile />} />
           <Route path="/home" element={<Home />} />
           <Route path="/" element={<Default />} />

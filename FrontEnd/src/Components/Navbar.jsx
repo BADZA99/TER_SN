@@ -13,6 +13,8 @@ const styles = {
     padding: "10px",
     backgroundColor: "#1a237e",
     alignItems: "center",
+    // position:'absolute',
+    // top:'0'
   },
   logo: {
     height: "80%",
@@ -106,13 +108,13 @@ export default function Navbar() {
         <Link to="/classesPresentation" style={styles.menu}>
           Classes
         </Link>
-        <Link to="/zones" style={styles.menu}>
+        <Link to="/zonesPresentation" style={styles.menu}>
           Zones
         </Link>
-        <Link to="/Tarifs" style={styles.menu}>
+        {/* <Link to="/Tarifs" style={styles.menu}>
           Tarifs
-        </Link>
-        <Link to="/horaires" style={styles.menu}>
+        </Link> */}
+        <Link to="/horairesPresentation" style={styles.menu}>
           Horaires
         </Link>
         {user && (

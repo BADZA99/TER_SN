@@ -47,7 +47,7 @@ export default function Zones() {
   const [zones, setZones] = useState([]); 
   const toPrices = (zoneName) => {
     setZoneChoice(zoneName);
-    navigate("/prices");
+    navigate("/horaires");
   };
 // console.log(user,classChoice)
   const fetchZones = async () => {

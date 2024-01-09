@@ -37,7 +37,7 @@ const ClassesPresentation = () => {
       borderRadius: "10px",
       marginBottom: "20px",
       padding: "20px",
-      height:'100%',
+      height:'70%',
       boxShadow: "2px 2px 6px 0px rgba(0,0,0,0.2)",
     },
   };
@@ -48,9 +48,9 @@ const ClassesPresentation = () => {
       <div style={styles.row}>
         {classes.map((classItem, index) => (
           <div style={styles.card} key={index}>
-            <h2>Classe {classItem.id}</h2>
+            <h2>{classItem.id}e Classe</h2>
             <p>
-              Prix: {classItem.description} <br />
+              Tarifs: {classItem.description} <br />
               Description:
               {classItem.id === 1
                 ? " La première classe offre plus d'espace pour les jambes, des sièges plus larges et plus confortables, et généralement moins de bruit que la seconde classe."

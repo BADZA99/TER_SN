@@ -7,16 +7,30 @@ const MyTickets = () => {
   const [tickets, setTickets] = useState([]);
     const { user, setUser } = userStore();
 
+    // creer la fonction pour fetch les tickets du user
+    const fetchTickets = async () => {
+        try {
+            const response = await axios
+              .get(`tickets/${user.id}`)
+              .then((response) => {
+                setTickets(response.data);
+              }) 
+        } catch (error) {
+            console.error("Failed to fetch tickets", error);
+        }
+    };
+
+
   useEffect(() => {
-    // Remplacez cette URL par l'URL de votre API
-    axios
-      .get(`tickets/${user.id}`)
-      .then((response) => {
-        setTickets(response.data);
-      })
-      .catch((error) => {
-        console.error("There was an error!", error);
-      });
+    // axios
+    //   .get(`tickets/${user.id}`)
+    //   .then((response) => {
+    //     setTickets(response.data);
+    //   })
+    //   .catch((error) => {
+    //     console.error("There was an error!", error);
+    //   });
+    fetchTickets();
   }, []);
 
   const styles = {
@@ -57,7 +71,7 @@ const MyTickets = () => {
               Class: {ticket.class_id} <br />
               Zone: {ticket.zone_id} <br />
               Number of Tickets: {ticket.num_tickets} <br />
-              Amount: {ticket.amount}
+              Amount: {ticket.amount} Fcfa
             </p>
             <a style={styles.link} href={ticket.qr_code}>
               Voir QR Code
