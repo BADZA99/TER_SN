@@ -1,0 +1,33 @@
+.qr-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  animation: fadeIn 2s ease-in-out;
+  margin: 10% auto;
+}
+
+.qr-code {
+  height: auto;
+  max-width: 10%;
+  width: 100%;
+}
+
+.reservation-link {
+  color: #111111;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.reservation-link:hover {
+  color: #111111;
+}
+
+.generated-link {
+  color: #111111;
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}

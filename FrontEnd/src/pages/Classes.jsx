@@ -46,6 +46,7 @@ export default function Classes() {
   const { ticketPrice, setTicketPrice } = userStore();
   const [classes, setClasses] = useState();
   const navigate = useNavigate();
+  // console.log(ticketPrice);
 
   // stocker la classe et le prix du ticket choisit l'utilisateur
 const toZones = (className,classPrice) => {

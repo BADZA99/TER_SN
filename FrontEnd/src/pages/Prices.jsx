@@ -2,46 +2,10 @@ import React, { useState } from "react";
 import useUserStore from "../store/userStore";
 import { useNavigate } from "react-router-dom";
 import QRCode from "react-qr-code";
+import "../css/prices.css";
 
 
-const styles = {
-  container: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    height: "80vh",
-    width: "50%",
-    backgroundColor: "#f1f1f1",
-    margin: "10% auto"
-  },
-  title: {
-    fontSize: "1.5em",
-    color: "#303f9f",
-  },
-  ticketInput: {
-    margin: "20px 0",
-    padding: "10px",
-    fontSize: "1em",
-  },
-  total: {
-    fontSize: "1.5em",
-    color: "#303f9f",
-  },
-  button: {
-    margin: "0 10px",
-    padding: "10px 20px",
-    fontSize: "1em",
-    color: "#fff",
-    backgroundColor: "#007bff",
-    border: "none",
-    borderRadius: "5px",
-    cursor: "pointer",
-  },
-  buttonDisabled: {
-    backgroundColor: "#6c757d",
-  },
-};
+
 
 
 export default function Prices() {
@@ -65,32 +29,31 @@ export default function Prices() {
   const validate = () => {
     setNbTicket(ticketCount);
     setTotalToPay(total);
-    navigate("/infosReservation");
+    navigate("/succes");
   };
 
   const total = ticketCount * ticketPrice;
 
   return (
-    <div style={styles.container}>
-      <h1 style={styles.title}>Choisi le nombre de tickets</h1>
-      <div>
+    <div className="ticket-selection">
+      <h1 className="title">Choisi le nombre de tickets</h1>
+      <div className="counter">
         <button
-          style={styles.button}
+          className="counter-button"
           onClick={decrementTicketCount}
           disabled={ticketCount === 0}
         >
           -
         </button>
-        <span>{ticketCount}</span>
-        <button style={styles.button} onClick={incrementTicketCount}>
+        <span className="counter-value">{ticketCount}</span>
+        <button className="counter-button" onClick={incrementTicketCount}>
           +
         </button>
       </div>
-      <p style={styles.total}>Total a payer: {total} fcfa</p>
-      <button style={styles.button} onClick={validate}>
+      <p className="total">Total a payer: {total} fcfa</p>
+      <button className="validate-button" onClick={validate}>
         Validate
       </button>
-   
     </div>
   );
 }

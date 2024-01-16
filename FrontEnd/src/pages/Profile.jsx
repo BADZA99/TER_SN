@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import '../css/profil.css'
 
 const Profile = () => {
   const [user, setUser] = useState({});
@@ -36,11 +37,11 @@ const Profile = () => {
   };
 
   return (
-    <div style={styles.container}>
-      <h1>Profil</h1>
-      <div style={styles.card}>
-        <h2>{user.name}</h2>
-        <p>
+    <div className="profile-container">
+      <h1 className="profile-title">Profil</h1>
+      <div className="profile-card">
+        <h2 className="profile-name">{user.name}</h2>
+        <p className="profile-details">
           Email: {user.email} <br />
           Date d'inscription : {new Date(user.created_at).toLocaleDateString()}
         </p>

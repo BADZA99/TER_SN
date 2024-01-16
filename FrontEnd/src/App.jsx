@@ -13,6 +13,7 @@ import ClassePresentation from './pages/ClassesPresentation';
 import HorairesPresentation from './pages/HorairesPresentation';
 import ZonesPresentation from './pages/ZonesPresentation';
 import Horaires from './pages/Horaires';
+import Succes from './pages/Succes';
 import Navbar from "./Components/Navbar";
 // import la page infosreservations dans pages
 import InfosReservation from "./pages/infosReservation"
@@ -37,14 +38,16 @@ function App() {
     try {
       const response = await axios.get("user");
       //  console.log(response.data);
-      setUser(response.data);
+      // setUser(response.data);
+      // console.log(user)
       //  setMessage(`hi ${response.data.email}`);
     } catch (e) {
       console.log(e);
     }
   };
    useEffect(() => {
-     fetchConnectedUser();
+
+      fetchConnectedUser();
    }, []);
 
   return (
@@ -53,10 +56,18 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/infosReservation" element={<InfosReservation />} />
+          <Route path="/succes" element={<Succes />} />
+          {/* <Route
+            path="/infosReservation/:userId/:class/:zone/:tickets/:total"
+            component={InfosReservation}
+          /> */}
           <Route path="/classesPresentation" element={<ClassePresentation />} />
           <Route path="/zonesPresentation" element={<ZonesPresentation />} />
           <Route path="/horaires" element={<Horaires />} />
-          <Route path="/horairesPresentation" element={<HorairesPresentation />} />
+          <Route
+            path="/horairesPresentation"
+            element={<HorairesPresentation />}
+          />
           <Route path="/myProfile" element={<Profile />} />
           <Route path="/home" element={<Home />} />
           <Route path="/" element={<Default />} />

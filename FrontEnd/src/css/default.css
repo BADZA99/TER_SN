@@ -1,0 +1,53 @@
+.default-container {
+  background-image: url('../assets/ter2.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 90.5vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.default-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.default-container > * {
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+.default-container h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.default-container p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  text-align: center;
+  max-width: 80%;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.default-container a {
+  animation: fadeIn 2s ease-in-out;
+  /* Reste du style du bouton */
+}

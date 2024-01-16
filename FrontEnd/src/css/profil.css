@@ -1,0 +1,39 @@
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  animation: fadeIn 2s ease-in-out;
+  margin: 5% auto;
+}
+
+.profile-title {
+  color: #303f9f;
+  text-align: center;
+    font-size: 2.5em;
+}
+
+.profile-card {
+  padding: 20px;
+  background-color: #303f9f;
+  color: white;
+  border-radius: 5px;
+  width: 50%;
+}
+
+.profile-name {
+  color: #ddd;
+  text-align: center;
+    font-size: 2em;
+}
+
+.profile-details {
+  color: #ddd;
+  text-align: center;
+    font-size: 1.5em;
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}

@@ -1,0 +1,89 @@
+.container {
+  display: flex;
+  height: 90vh;
+}
+
+.left {
+  flex: 1;
+  background-color: #303f9f;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  padding: 50px;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+
+}
+
+.right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+
+}
+
+.login-form {
+  background: #fff;
+  padding: 30px;
+  width: 80%;
+  height:70%;
+  border-radius: 5px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-form h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  /* taile */
+  font-size: 2.5em;
+    color: #303f9f;
+    /* font family */
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.login-form input {
+  width: 70%;
+  height: 45px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 40px;
+  font-family: 'Roboto', sans-serif;
+
+}
+
+.login-form button {
+  width: 70%;
+  background: #303f9f;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: 'Roboto', sans-serif;
+  /* font size */
+    font-size: 1.2em;
+
+}
+
+.login-form button:hover {
+  background: #405cbf;
+}
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+.left h1 {
+  animation: fadeIn 2s ease-in-out;
+}

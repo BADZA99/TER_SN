@@ -1,25 +1,37 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import userStore from "../store/userStore";
-
+import QRCode from "react-qr-code";
+import useUserStore from "../store/userStore";
 
 const MyTickets = () => {
   const [tickets, setTickets] = useState([]);
-    const { user, setUser } = userStore();
+  const {
+    user,
+    SavedClassChoice,
+    zoneChoice,
+    nbTicket,
+    TotalToPay,
+    depart_time,
+  } = useUserStore();
 
-    // creer la fonction pour fetch les tickets du user
-    const fetchTickets = async () => {
-        try {
-            const response = await axios
-              .get(`tickets/${user.id}`)
-              .then((response) => {
-                setTickets(response.data);
-              }) 
-        } catch (error) {
-            console.error("Failed to fetch tickets", error);
-        }
-    };
+  const InfosTickets = `
+      Bonjour ${user.name},
+      Vous avez reserve ${nbTicket} tickets pour le ${depart_time} en ${SavedClassChoice} en zone ${zoneChoice}.
+      Le montant total a payer est de ${TotalToPay} .`;
 
+  // creer la fonction pour fetch les tickets du user
+  const fetchTickets = async () => {
+    try {
+      const response = await axios
+        .get(`tickets/${user.id}`)
+        .then((response) => {
+          setTickets(response.data);
+        });
+    } catch (error) {
+      console.error("Failed to fetch tickets", error);
+    }
+  };
 
   useEffect(() => {
     // axios
@@ -55,32 +67,50 @@ const MyTickets = () => {
       color: "blue",
       textDecoration: "none",
     },
-    text:{
-        textAlign:'center',
-    }
+    text: {
+      textAlign: "center",
+    },
   };
 
   return (
     <div style={styles.container}>
       <h1>Mes Tickets</h1>
       <div style={styles.row}>
-        { tickets.length != 0 && tickets.map((ticket, index) => (
-          <div style={styles.card} key={index}>
-            <h2>Ticket {ticket.id}</h2>
-            <p>
-              Class: {ticket.class_id} <br />
-              Zone: {ticket.zone_id} <br />
-              Number of Tickets: {ticket.num_tickets} <br />
-              Amount: {ticket.amount} Fcfa
-            </p>
-            <a style={styles.link} href={ticket.qr_code}>
-              Voir QR Code
-            </a>
-          </div>
-        ) )}
-        {
-            tickets.length == 0 && <h1>Vous n'avez pas encore acheté de tickets</h1>
-        }
+        {tickets.length != 0 &&
+          tickets.map((ticket, index) => (
+            <div style={styles.card} key={index}>
+              <h2>Ticket {ticket.id}</h2>
+              <p>
+                Classe: {ticket.class_id}e classe <br />
+                Zone:{" "}
+                {ticket.zone_id === 1
+                  ? "Dakar->Guediewaye"
+                  : ticket.zone_id === 2
+                  ? "Dakar->Pikine"
+                  : ticket.zone_id === 3
+                  ? "Dakar->Diamniadio"
+                  : ticket.zone_id === 4
+                  ? "Dakar->Guediewaye"
+                  : ticket.zone_id === 5
+                  ? "Dakar->Pikine"
+                  : ticket.zone_id === 6
+                  ? "Dakar->Diamniadio"
+                  : "zone non defini"}{" "}
+                <br />
+                Nombre de Tickets: {ticket.num_tickets} <br />
+                Montant: {ticket.amount} Fcfa
+              </p>
+              <QRCode
+                size={16}
+                style={{ height: "150px", maxWidth: "50%", width: "100%" }}
+                value={ticket.qr_code}
+                viewBox={`0 0 16 16`}
+              />
+            </div>
+          ))}
+        {tickets.length === 0 ? (
+          <h1>Vous n'avez pas encore acheté de tickets</h1>
+        ):""}
       </div>
     </div>
   );
