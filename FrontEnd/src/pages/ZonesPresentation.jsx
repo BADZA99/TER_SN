@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import "../css/zonePresentation.css";
 
 export default function ZonesPresentation() {
   const [zones, setZones] = useState([]);
@@ -45,26 +46,27 @@ export default function ZonesPresentation() {
   }, []);
 
  return (
-   <table style={styles.table}>
-     <thead>
-       <tr>
-         <th style={styles.th}>Classes</th>
-         <th style={styles.th}>Trajets</th>
-       </tr>
-     </thead>
-     <tbody>
-       {zones.map((zone) => (
-         <tr
-           key={zone.id}
-           style={zone.id % 2 === 0 ? styles.firstClass : styles.secondClass}
-         >
-           <td style={styles.td}>
-             {zone.id % 2 === 0 ? "Premiere Classe" : "Seconde Classe"}
-           </td>
-           <td style={styles.td}>{zone.description}</td>
+   <div className="zones-container">
+     <h1 className="zones-title">Zones de voyage du TER</h1>
+     <table className="zones-table">
+       <thead>
+         <tr>
+           <th>Classes</th>
+           <th>Trajets</th>
          </tr>
-       ))}
-     </tbody>
-   </table>
+       </thead>
+       <tbody>
+         {zones.map((zone) => (
+           <tr
+             key={zone.id}
+             className={zone.id % 2 === 0 ? "first-class" : "second-class"}
+           >
+             <td>{zone.id % 2 === 0 ? "Premiere Classe" : "Seconde Classe"}</td>
+             <td>{zone.description}</td>
+           </tr>
+         ))}
+       </tbody>
+     </table>
+   </div>
  );
 }

@@ -8,7 +8,7 @@ export default function Default() {
 
   return (
     <div className="default-container">
-      <h1>Bienvenue sur l'application TER BI</h1>
+      <h1>Bienvenue sur l'application SNTER</h1>
       <p>Achetez vos tickets de train en toute simplicité</p>
       {user && <Link to="/classes">Acheter un ticket</Link>}
     </div>

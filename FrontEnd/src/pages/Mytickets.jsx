@@ -3,6 +3,7 @@ import axios from "axios";
 import userStore from "../store/userStore";
 import QRCode from "react-qr-code";
 import useUserStore from "../store/userStore";
+import "../css/mytickets.css";
 
 const MyTickets = () => {
   const [tickets, setTickets] = useState([]);
@@ -73,14 +74,14 @@ const MyTickets = () => {
   };
 
   return (
-    <div style={styles.container}>
-      <h1>Mes Tickets</h1>
-      <div style={styles.row}>
-        {tickets.length != 0 &&
+    <div className="tickets-container">
+      <h1 className="tickets-title">Mes Tickets</h1>
+      <div className="tickets-row">
+        {tickets.length !== 0 &&
           tickets.map((ticket, index) => (
-            <div style={styles.card} key={index}>
-              <h2>Ticket {ticket.id}</h2>
-              <p>
+            <div className="ticket-card" key={index}>
+              <h2 className="ticket-title">Ticket N°{ticket.id}</h2>
+              <p className="ticket-details">
                 Classe: {ticket.class_id}e classe <br />
                 Zone:{" "}
                 {ticket.zone_id === 1
@@ -102,15 +103,19 @@ const MyTickets = () => {
               </p>
               <QRCode
                 size={16}
-                style={{ height: "150px", maxWidth: "50%", width: "100%" }}
+                style={{ height: "0px", maxWidth: "40%", width: "100%" }}
                 value={ticket.qr_code}
                 viewBox={`0 0 16 16`}
               />
             </div>
           ))}
         {tickets.length === 0 ? (
-          <h1>Vous n'avez pas encore acheté de tickets</h1>
-        ):""}
+          <h1 className="no-tickets-message">
+            Vous n'avez pas encore acheté de tickets
+          </h1>
+        ) : (
+          ""
+        )}
       </div>
     </div>
   );

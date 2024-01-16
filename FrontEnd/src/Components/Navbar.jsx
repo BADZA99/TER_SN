@@ -2,7 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import userStore from "../store/userStore";
 import axios from "axios";
-import './Navbar.css'
+import './Navbar.css';
+import snFlag from '../assets/senegal.svg'
 
 
 
@@ -27,11 +28,13 @@ export default function Navbar() {
 
   return (
     <nav className="navbar">
-      <Link className="logo-link" to={user ? "/home" : "/default"}>
-        <h1>TER BI</h1>
+      <Link className="logo-link" to={user ? "/home" : "/"}>
+        <h1>SNTER
+        <img className="sn-flag" src={snFlag} alt="sn-flag" />
+        </h1>
       </Link>
       <div className="navbar-links">
-        <Link to={user ? "/home" : "/default"}>Acceuil</Link>
+        <Link to={user ? "/home" : "/"}>Acceuil</Link>
         <Link to="/classesPresentation">Classes</Link>
         <Link to="/zonesPresentation">Zones</Link>
         <Link to="/horairesPresentation">Horaires</Link>

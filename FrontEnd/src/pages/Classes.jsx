@@ -3,6 +3,7 @@ import axios from "axios";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import userStore from "../store/userStore";
+import "../css/classCard.css";
 
 
 
@@ -83,6 +84,7 @@ const toZones = (className,classPrice) => {
         classes.map((classe, index) => (
           <div
             key={index}
+            className="classCarde"
             style={styles.classCard}
             onClick={() => toZones(classe.id,classe.description)}
           >

@@ -1,0 +1,51 @@
+.classes-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  animation: fadeIn 2s ease-in-out;
+  margin: 5% auto;
+}
+
+.classes-title {
+  color: #303f9f;
+  text-align: center;
+}
+
+.classes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.class-card {
+  padding: 20px;
+  background-color: #303f9f;
+  color: white;
+  border-radius: 5px;
+  animation: slideIn 2s ease-in-out;
+}
+
+.class-title {
+  color: #ddd;
+  text-align: center;
+  font-size: 1.4em;
+}
+
+.class-description {
+  color: #ddd;
+  font-size: 14px;
+  line-height: 1.6;
+  font-size: 1em;
+  font-weight: 700;
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@keyframes slideIn {
+  0% {transform: translateX(-100%);}
+  100% {transform: translateX(0);}
+}

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import "../css/classePresentation.css";
 
 const ClassesPresentation = () => {
   const [classes, setClasses] = useState([]);
@@ -16,40 +17,16 @@ const ClassesPresentation = () => {
       });
   }, []);
 
-  const styles = {
-    container: {
-      width: "100%",
-      padding: "20px",
-    },
-    row: {
-      display: "flex",
-      flexWrap: "wrap",
-      justifyContent: "space-between",
-      alignItems:'center',
-      width:'70%',
-      margin: "0 auto",
-      height: "300px",
-    //   backgroundColor: "red",
-    },
-    card: {
-      width: "40%",
-      border: "1px solid #ccc",
-      borderRadius: "10px",
-      marginBottom: "20px",
-      padding: "20px",
-      height:'70%',
-      boxShadow: "2px 2px 6px 0px rgba(0,0,0,0.2)",
-    },
-  };
+ 
 
   return (
-    <div style={styles.container}>
-      <h1>Classes de voyage du TER</h1>
-      <div style={styles.row}>
+    <div className="classes-container">
+      <h1 className="classes-title">Classes de voyage du TER</h1>
+      <div className="classes-list">
         {classes.map((classItem, index) => (
-          <div style={styles.card} key={index}>
-            <h2>{classItem.id}e Classe</h2>
-            <p>
+          <div className="class-card" key={index}>
+            <h2 className="class-title">{classItem.id}e Classe</h2>
+            <p className="class-description">
               Tarifs: {classItem.description} <br />
               Description:
               {classItem.id === 1

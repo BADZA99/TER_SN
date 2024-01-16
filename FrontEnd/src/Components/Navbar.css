@@ -11,16 +11,30 @@
 
 }
 
+.logo-link{
+  margin-right: auto;
+  text-decoration: none;
+}
 .logo-link h1 {
   color: #ddd;
   text-decoration: none;
   transition: color 0.3s ease;
   font-size: 2em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 
 }
 
 .logo-link h1:hover {
   color: #bbb;
+}
+
+.logo-link a {
+  text-decoration: none;
+
+
+
 }
 
 .navbar h1 {
@@ -31,6 +45,9 @@
   display: flex;
   gap: 20px;
   align-items: center;
+  /* background: #000; */
+  margin: auto;
+  font-size: medium;
 
 }
 
@@ -47,6 +64,9 @@
 .auth-links  {
   display: flex;
   gap: 20px;
+  margin-left: auto;
+  /* background: #000; */
+
 
 }
 
@@ -78,4 +98,10 @@
     flex-direction: column;
     gap: 10px;
   }
+}
+
+.sn-flag{
+  width: 34px;
+  height: 34px;
+  /* margin-right: 10px; */
 }

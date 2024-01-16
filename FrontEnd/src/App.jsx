@@ -57,10 +57,6 @@ function App() {
         <Routes>
           <Route path="/infosReservation" element={<InfosReservation />} />
           <Route path="/succes" element={<Succes />} />
-          {/* <Route
-            path="/infosReservation/:userId/:class/:zone/:tickets/:total"
-            component={InfosReservation}
-          /> */}
           <Route path="/classesPresentation" element={<ClassePresentation />} />
           <Route path="/zonesPresentation" element={<ZonesPresentation />} />
           <Route path="/horaires" element={<Horaires />} />
@@ -68,15 +64,18 @@ function App() {
             path="/horairesPresentation"
             element={<HorairesPresentation />}
           />
-          <Route path="/myProfile" element={<Profile />} />
-          <Route path="/home" element={<Home />} />
+          <Route path="/myProfile" element={user ? <Profile /> : <Default />} />
+          <Route path="/home" element={user ? <Home /> : <Login />} />
           <Route path="/" element={<Default />} />
           <Route path="/prices" element={<Prices />} />
-          <Route path="/mestickets" element={<MyTickets />} />
-          <Route path="/zones" element={<Zones />} />
-          <Route path="/classes" element={<Classes />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
+          <Route
+            path="/mestickets"
+            element={user ? <MyTickets /> : <Default />}
+          />
+          <Route path="/zones" element={user ? <Zones /> : <Default />} />
+          <Route path="/classes" element={user ? <Classes /> : <Default />} />
+          <Route path="/register" element={user ? <Default /> : <Register />} />
+          <Route path="/login" element={user ? <Home /> : <Login />} />
         </Routes>
       </Router>
     </>
