@@ -103,7 +103,8 @@ const MyTickets = () => {
               </p>
               <QRCode
                 size={16}
-                style={{ height: "0px", maxWidth: "40%", width: "100%" }}
+                style={{ height: "100px", maxWidth: "60%", width: "100%",
+                margin: "auto" }}
                 value={ticket.qr_code}
                 viewBox={`0 0 16 16`}
               />
