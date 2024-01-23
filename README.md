@@ -1,6 +1,6 @@
 # SNTER
 
-Ce projet est une application de gestion de tickets de voyage pour le TER (Train Express Régional) de Dakar, Sénégal.
+Ce projet est une application de rervation de tickets de voyage pour le TER (Train Express Régional) de Dakar, Sénégal.
 
 ## Description
 
@@ -18,7 +18,7 @@ Pour installer ce projet, suivez les étapes suivantes :
 
 ## Utilisation
 
-Pour lancer l'application, utilisez la commande suivante : `npm start`
+Pour lancer l'application, utilisez la commande suivante : `php artisan serve`
 
 
 ### Frontend
@@ -27,19 +27,15 @@ Pour lancer l'application, utilisez la commande suivante : `npm start`
 2. Lancez l'application frontend (dans le dossier frontend): `npm run dev`
 
 ### Backend
-1. Ouvrez un nouvel onglet ou fenêtre de votre terminal a la racine du projet et faite php artisan serve
+1. Ouvrez un nouvel onglet ou fenêtre de votre terminal a la racine du projet et faite  `php artisan serve`
 
 ## Contribuer
 
 Pour contribuer à ce projet, veuillez créer une branche, apporter vos modifications, puis soumettre une demande de pull.
 
-## Licence
-
-Ce projet est sous licence MIT. Pour plus d'informations, voir le fichier `LICENSE`.
-
 ## Contact
 
-Si vous avez des questions ou des commentaires, n'hésitez pas à nous contacter à `pndiaye999@gmail.com`.
+Si vous avez des questions ou des commentaires, n'hésitez pas à nous contacter à `pndiaye999@gmail.com` ou  `77 432 76 40`.
 
 ## Auteur
 
