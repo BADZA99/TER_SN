@@ -22,11 +22,11 @@ export default function Succes() {
         depart_time
       );
 
-      const reservationUrl = `http://http://localhost:5173/infosReservation?class=${SavedClassChoice}&zone=${zoneChoice}&tickets=${nbTicket}&total=${TotalToPay}`;
+      const reservationUrl = `http://http://localhost:5173/infosReservation?class=${SavedClassChoice}&zone=${zoneChoice}&tickets=${nbTicket}&total=${TotalToPay} fcfa`;
       // cree ici du texte formate avec tous les information de la reservation
       const InfosTickets = `
       Bonjour ${user?.name},
-      Vous avez reserve ${nbTicket} tickets pour le ${depart_time} en ${SavedClassChoice} en zone ${
+      Vous avez reserve ${nbTicket} tickets pour le ${depart_time} en ${SavedClassChoice}e classe pour la zone zone ${
         zoneChoice === 1
           ? "Dakar->Guediewaye"
           : zoneChoice === 2
@@ -44,17 +44,20 @@ export default function Succes() {
       Le montant total a payer est de ${TotalToPay} fcfa .`;
 
   return (
-    <div className="qr-container">
-      <QRCode
-        className="qr-code"
-        size={16}
-        value={InfosTickets}
-        viewBox={`0 0 16 16`}
-      />
-      <Link className="reservation-link" to="/infosReservation">
-        Voir la réservation en ligne
-      </Link>
-      <p className="generated-link">lien genere {reservationUrl}</p>
-    </div>
+    <>
+      <h1 className="success">Reservation réussie</h1>
+      <div className="qr-container">
+        <QRCode
+          className="qr-code"
+          size={16}
+          value={InfosTickets}
+          viewBox={`0 0 16 16`}
+        />
+        <Link className="reservation-link" to="/infosReservation">
+          Voir la réservation en ligne
+        </Link>
+        <p className="generated-link">lien genere {reservationUrl}</p>
+      </div>
+    </>
   );
 }

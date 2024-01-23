@@ -4,7 +4,9 @@
   align-items: center;
   gap: 20px;
   animation: fadeIn 2s ease-in-out;
-  margin: 10% auto;
+  margin: 5% auto;
+  /* width: 80%; */
+  /* height: 50vh; */
 }
 
 .qr-code {
@@ -30,4 +32,13 @@
 @keyframes fadeIn {
   0% {opacity: 0;}
   100% {opacity: 1;}
+}
+
+.success{
+  color: #0eb152;
+  text-align: center;
+  animation: fadeIn 2s ease-in-out;
+  margin: 5% auto;
+  font-size: 34px;
+  font-weight: bold;
 }

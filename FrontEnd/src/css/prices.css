@@ -1,6 +1,6 @@
 .ticket-selection {
-  background-color: #303f9f;
-  color: white;
+  /* background-color: #303f9f; */
+  color: rgb(0, 0, 0);
   padding: 20px;
   border-radius: 5px;
   height: 90vh;
@@ -11,6 +11,8 @@
   /* background: #000; */
   
 }
+
+
 
 .title {
   text-align: center;
@@ -63,4 +65,23 @@
 
 .validate-button:hover {
   background-color: #506edf;
+}
+
+.buttonLink {
+  position: absolute;
+  top: 15%;
+  left: 10px;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #303f9f;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.buttonLink:hover {
+  background-color: #536391;
 }

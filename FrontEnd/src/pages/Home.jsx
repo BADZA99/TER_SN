@@ -16,7 +16,9 @@ export default function Home() {
   return (
     <div className="home-container">
       <h1>Bienvenue {user && ` ${user.name}`}</h1>
-      <Link to="/classes">Acheter un ticket</Link>
+      <Link to="/classes">
+        Acheter un ticket
+      </Link>
     </div>
   );
 }

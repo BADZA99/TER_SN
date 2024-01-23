@@ -67,7 +67,7 @@ function App() {
           <Route path="/myProfile" element={user ? <Profile /> : <Default />} />
           <Route path="/home" element={user ? <Home /> : <Login />} />
           <Route path="/" element={<Default />} />
-          <Route path="/prices" element={<Prices />} />
+          <Route path="/prices" element={user ? <Prices /> : <Default />} />
           <Route
             path="/mestickets"
             element={user ? <MyTickets /> : <Default />}

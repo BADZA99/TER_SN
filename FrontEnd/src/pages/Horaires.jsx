@@ -3,6 +3,8 @@ import axios from "axios";
 import useUserStore from "../store/userStore";
 // import usenavigate
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import "../css/horaireChoice.css";
 
 
  const styles = {
@@ -49,10 +51,13 @@ export default function Horaires() {
 
 
   return (
-    <div style={styles.container}>
-      <h1>Choisissez votre horaire de départ</h1>
+    <div className="mainContainer">
+      <Link className="buttonLink" to="/zones">
+        Retour aux zones
+      </Link>
+      <h1 className="title">Choisissez votre horaire de départ</h1>
       <select
-        style={styles.select}
+        className="horaireSelect"
         value={selectedHoraire}
         onChange={handleSelectChange}
       >

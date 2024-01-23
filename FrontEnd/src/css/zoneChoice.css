@@ -1,0 +1,64 @@
+.mainContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  text-align: center;
+  color: #303f9f;
+}
+
+.zoneCard {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.zoneCard:hover {
+  transform: scale(1.05);
+    /* change bg et color  */
+    background-color: #303f9f;
+    color: white;
+}
+
+.zoneName, .zoneClass {
+  /* color: #1f1e1e; */
+  margin-bottom: 10px;
+}
+
+.zoneDescription {
+  /* color: #666; */
+    font-weight: 600;
+}
+
+.loading {
+  text-align: center;
+  color: #303f9f;
+}
+
+.buttonLink {
+  position: absolute;
+  top: 15%;
+  left: 10px;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #303f9f;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.buttonLink:hover {
+  background-color: #536391;
+}

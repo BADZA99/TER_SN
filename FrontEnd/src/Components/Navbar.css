@@ -47,7 +47,7 @@
   align-items: center;
   /* background: #000; */
   margin: auto;
-  font-size: medium;
+  font-size: 18px;
 
 }
 
@@ -78,7 +78,7 @@
   border-radius: 5px;
   /* font family */
     font-family: 'Roboto', sans-serif;
-    font-size: 1.2em;
+    font-size: 1.3em;
 
   transition: background-color 0.3s ease;
 }

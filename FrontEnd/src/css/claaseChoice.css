@@ -1,0 +1,46 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.title {
+  text-align: center;
+  color: #303f9f;
+}
+.mainContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.classCard {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 20px;
+  text-align: center;
+  cursor: pointer;
+
+  transition: transform 0.3s ease;
+}
+
+.classCard:hover {
+  transform: scale(1.05);
+  /* change bg et color  */
+    background-color: #303f9f;
+    color: white;
+}
+
+.classTitle {
+  /* color: #303f9f; */
+  margin-bottom: 10px;
+}
+
+
+
+.classDescription {
+  /* color: #666; */
+  font-weight: 600;
+
+}

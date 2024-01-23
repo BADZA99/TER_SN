@@ -71,3 +71,21 @@
   animation: slideIn 2s ease-in-out;
 }
 
+
+.buttonLink {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px 0;
+  color: #fff;
+  background-color: #303f9f;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.buttonLink:hover {
+  background-color: #536391;
+}
+

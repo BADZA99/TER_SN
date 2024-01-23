@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import userStore from "../store/userStore";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import "../css/zoneChoice.css";
 
 const styles = {
   container: {
@@ -44,12 +45,12 @@ export default function Zones() {
   // const [savedClassChoice, setSavedClassChoice] = useState(classChoice);
   const { zoneChoice, setZoneChoice } = userStore();
   const navigate = useNavigate();
-  const [zones, setZones] = useState([]); 
+  const [zones, setZones] = useState([]);
   const toPrices = (zoneName) => {
     setZoneChoice(zoneName);
     navigate("/horaires");
   };
-// console.log(user,classChoice)
+  // console.log(user,classChoice)
   const fetchZones = async () => {
     try {
       const response = await axios.get("zone");
@@ -66,26 +67,26 @@ export default function Zones() {
   }, []);
 
   return (
-    <div style={styles.container}>
-      <h1 style={styles.title}>Choisir Votre Zone</h1>
-      {zones && zones
-        .filter((zone) => zone.class_id === SavedClassChoice)
-        .map((zone, index) => (
-          <div
-            key={index}
-            style={styles.zoneCard}
-            onClick={() => toPrices(zone.id)}
-          >
-            <h2 style={styles.zoneName}>{zone.name}</h2>
-            <h2 style={styles.zoneName}>
-              {zone.class_id == 1 ? "1ere classe" : "2nd classe"}
-            </h2>
-            <p style={styles.zoneClass}>{zone.description}</p>
-          </div>
-        ))}
-        {
-          zones.length === 0 && <h1>Chargement ....</h1>
-        }
+    <div className="mainContainer">
+      <Link className="buttonLink" to={"/classes"}>retour a classe</Link>
+      <h1 className="title">Choisir Votre Zone</h1>
+      {zones &&
+        zones
+          .filter((zone) => zone.class_id === SavedClassChoice)
+          .map((zone, index) => (
+            <div
+              key={index}
+              className="zoneCard"
+              onClick={() => toPrices(zone.id)}
+            >
+              <h2 className="zoneName">{zone.name}</h2>
+              <h2 className="zoneClass">
+                {zone.class_id == 1 ? "1ere classe" : "2nd classe"}
+              </h2>
+              <p className="zoneDescription">{zone.description}</p>
+            </div>
+          ))}
+      {zones.length === 0 && <h1 className="loading">Chargement ....</h1>}
     </div>
   );
 }

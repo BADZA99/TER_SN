@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import useUserStore from "../store/userStore";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import QRCode from "react-qr-code";
 import "../css/prices.css";
 
@@ -36,6 +36,9 @@ export default function Prices() {
 
   return (
     <div className="ticket-selection">
+      <Link className="buttonLink" to="/Horaires">
+        Retour aux Horaires
+      </Link>
       <h1 className="title">Choisi le nombre de tickets</h1>
       <div className="counter">
         <button
@@ -52,7 +55,7 @@ export default function Prices() {
       </div>
       <p className="total">Total a payer: {total} fcfa</p>
       <button className="validate-button" onClick={validate}>
-        Validate
+        Valider
       </button>
     </div>
   );
