@@ -4,7 +4,7 @@ Ce projet est une application de rervation de tickets de voyage pour le TER (Tra
 
 ## Description
 
-Cette application, nommée SNTER, permet aux utilisateurs d'acheter des tickets pour différents trajets et classes de voyage. Les utilisateurs peuvent voir leurs tickets, y compris les détails tels que la classe, la zone, le nombre de tickets et le montant. Les tickets sont présentés sous forme de QR codes pour une utilisation facile.
+Cette application, nommée SNTER, permet aux utilisateurs de reserver des tickets pour différents trajets et classes de voyage. Les utilisateurs peuvent voir leurs tickets, y compris les détails tels que la classe, la zone, le nombre de tickets et le montant. Les tickets sont présentés sous forme de QR codes pour une utilisation facile.
 
 Le frontend de l'application est construit avec ReactJS, tandis que le backend utilise Laravel avec des API.
 
