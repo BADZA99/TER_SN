@@ -8,7 +8,7 @@ Cette application, nommée SNTER, permet aux utilisateurs de reserver des ticket
 
 Le frontend de l'application est construit avec ReactJS, tandis que le backend utilise Laravel avec des API cote laravel.
 
-  - [Voir la démo du projet]([https://lien-vers-la-demo.com](https://www.linkedin.com/feed/update/urn:li:activity:7159485672251080704/))
+  - [Voir la démo du projet]([https://www.linkedin.com/feed/update/urn:li:activity:7159485672251080704/])
     
 ## Installation
 
