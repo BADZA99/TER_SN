@@ -14,6 +14,7 @@ import HorairesPresentation from './pages/HorairesPresentation';
 import ZonesPresentation from './pages/ZonesPresentation';
 import Horaires from './pages/Horaires';
 import Succes from './pages/Succes';
+import Allusers from "./pages/allUsers";
 import Navbar from "./Components/Navbar";
 // import la page infosreservations dans pages
 import InfosReservation from "./pages/infosReservation"
@@ -55,11 +56,15 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
-          <Route path="/infosReservation" element={<InfosReservation />} />
+          <Route
+            path="/infosReservation"
+            element={user ? <InfosReservation /> : <Default />}
+          />
           <Route path="/succes" element={<Succes />} />
           <Route path="/classesPresentation" element={<ClassePresentation />} />
           <Route path="/zonesPresentation" element={<ZonesPresentation />} />
           <Route path="/horaires" element={<Horaires />} />
+          <Route path="/allUser" element={user ? <Allusers /> : <Default />} />
           <Route
             path="/horairesPresentation"
             element={<HorairesPresentation />}

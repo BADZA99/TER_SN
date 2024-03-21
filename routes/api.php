@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ClasseController;
 use App\Http\Controllers\HoraireController;
 use App\Http\Controllers\TicketController;
+use App\Http\Controllers\userController;
 use App\Http\Controllers\ZoneController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -41,5 +42,8 @@ Route::get('horaires',[HoraireController::class,'index']);
 Route::get('tickets',[TicketController::class,'index']);
 Route::get('tickets/{id}',[TicketController::class,'getTicketByUserId']);
 Route::post('add-tickets',[TicketController::class,'store']);
+
+// routes pour recuperer tous les users
+Route::get('allusers',[userController::class,'index']);
 
 

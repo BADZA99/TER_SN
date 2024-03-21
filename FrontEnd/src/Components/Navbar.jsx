@@ -11,6 +11,7 @@ import snFlag from '../assets/senegal.svg'
 
 export default function Navbar() {
   const { user, setUser } = userStore();
+  // console.log(user)
   const logout = async () => {
     try {
       const response = await axios.post(
@@ -38,6 +39,11 @@ export default function Navbar() {
         <Link to="/classesPresentation">Classes</Link>
         <Link to="/zonesPresentation">Zones</Link>
         <Link to="/horairesPresentation">Horaires</Link>
+        {
+          user && user.name === "badara" && (
+            <Link to="/allUser">Utilisateurs</Link>
+          )
+        }
         {user && (
           <>
             <Link to="/mestickets">Mes tickets</Link>

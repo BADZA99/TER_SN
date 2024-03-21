@@ -29,6 +29,10 @@ Pour lancer l'application, utilisez la commande suivante : `php artisan serve`
 ### Backend
 1. Ouvrez un nouvel onglet ou fenêtre de votre terminal a la racine du projet et faite  `php artisan serve`
 
+  ## Démo
+Vous pouvez voir une démo en direct de ce projet à l'adresse suivante : [voir la démo du projet](https://www.linkedin.com/feed/update/urn:li:activity:7159485672251080704/) 
+
+
 ## Contribuer
 
 Pour contribuer à ce projet, veuillez créer une branche, apporter vos modifications, puis soumettre une demande de pull.

@@ -30,18 +30,26 @@
   border-radius: 5px;
   animation: slideIn 2s ease-in-out;
   font: 1em sans-serif;
-  width: 100%;
+  width: 40%;
   max-width: 400px;
   height: 270px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
 }
 
 .ticket-title {
   color: #ddd;
-  text-align: center;
+  /* text-align: center; */
+  margin-bottom: 10px;
 }
 
 .ticket-details {
   color: #ddd;
+  font-weight: bold;
+  text-align: center;
 }
 /* 
 .qr-code {

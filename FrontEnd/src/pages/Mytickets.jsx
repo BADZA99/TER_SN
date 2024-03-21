@@ -16,10 +16,10 @@ const MyTickets = () => {
     depart_time,
   } = useUserStore();
 
-  const InfosTickets = `
-      Bonjour ${user.name},
-      Vous avez reserve ${nbTicket} tickets pour le ${depart_time} en ${SavedClassChoice} en zone ${zoneChoice}.
-      Le montant total a payer est de ${TotalToPay} .`;
+  // const InfosTickets = `
+  //     Bonjour ${user.name},
+  //     Vous avez reserve ${nbTicket} tickets pour le ${depart_time} en ${SavedClassChoice} en zone ${zoneChoice}.
+  //     Le montant total a payer est de ${TotalToPay} .`;
 
   // creer la fonction pour fetch les tickets du user
   const fetchTickets = async () => {
@@ -46,33 +46,7 @@ const MyTickets = () => {
     fetchTickets();
   }, []);
 
-  const styles = {
-    container: {
-      width: "100%",
-      padding: "20px",
-    },
-    row: {
-      display: "flex",
-      flexWrap: "wrap",
-      justifyContent: "space-between",
-    },
-    card: {
-      width: "30%",
-      border: "1px solid #ccc",
-      borderRadius: "10px",
-      marginBottom: "20px",
-      padding: "20px",
-      boxShadow: "2px 2px 6px 0px rgba(0,0,0,0.2)",
-    },
-    link: {
-      color: "blue",
-      textDecoration: "none",
-    },
-    text: {
-      textAlign: "center",
-    },
-  };
-
+ 
   return (
     <div className="tickets-container">
       <h1 className="tickets-title">Mes Tickets</h1>
